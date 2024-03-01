@@ -4,10 +4,10 @@ import org.jetbrains.kotlin.util.capitalizeDecapitalize.toLowerCaseAsciiOnly
 import java.time.ZoneOffset
 import java.time.ZonedDateTime
 
-val kotlinVersion: String = "1.7.21"
+val kotlinVersion: String = "1.9.22"
 
 plugins {
-    kotlin("jvm") version "1.7.21"
+    kotlin("jvm") version "1.9.22"
     application
     id("com.adarshr.test-logger") version "3.2.0"
     id("com.github.gmazzo.buildconfig") version "3.1.0"
@@ -72,7 +72,7 @@ idea {
 
 java {
     toolchain {
-        languageVersion.set(JavaLanguageVersion.of(11))
+        languageVersion.set(JavaLanguageVersion.of(17))
     }
 
     withJavadocJar()
@@ -81,7 +81,7 @@ java {
 
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().all {
     kotlinOptions {
-        jvmTarget = "11"
+        jvmTarget = "17"
     }
 }
 
